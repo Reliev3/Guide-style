@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relieve - A Brand Style Guide</title>
+    <style>
+        :root {
+            --color-paper: #F8F6F2;
+            --color-slate: #343A40;
+            --color-stone: #967969;
+            --color-blue: #A2D5F2;
+            --color-green: #0B6623;
+            --color-ochre: #CC7722;
+            --font-primary: 'Geist Sans', sans-serif;
+            --font-secondary: 'Space Mono', monospace;
+            --grid-gutter: 24px;
+            --max-width: 1200px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-paper);
+            color: var(--color-slate);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+        }
+
+        /* Navigation */
+        .brand-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 280px;
+            background-color: #ECEAE6;
+            border-right: 1px solid #DCDAD5;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .brand-nav .logo {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .brand-nav ul {
+            list-style: none;
+        }
+
+        .brand-nav li a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: var(--color-slate);
+            font-size: 15px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .brand-nav li a:hover {
+            background-color: #DCDAD5;
+        }
+
+        .brand-nav .nav-section-title {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-stone);
+            margin-top: 24px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            width: calc(100% - 280px);
+            padding: 60px 80px;
+        }
+
+        section {
+            margin-bottom: 100px;
+            padding-top: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 36px;
+            letter-spacing: -0.015em;
+            border-bottom: 1px solid #DCDAD5;
+            padding-bottom: 15px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 24px;
+            letter-spacing: -0.01em;
+            margin-top: 30px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-stone);
+            margin-top: 25px;
+        }
+
+        p,
+        li {
+            font-size: 16px;
+            margin-bottom: 1.2em;
+            max-width: 720px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        code {
+            font-family: var(--font-secondary);
+            background-color: #ECEAE6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--color-blue);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #DCDAD5;
+            margin: 60px 0;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .text-monospace {
+            font-family: var(--font-secondary);
+        }
+
+        .text-bold {
+            font-weight: 700;
+        }
+
+        .text-light {
+            color: #777;
+        }
+
+        .mb-large {
+            margin-bottom: 60px;
+        }
+
+        /* Component Styles */
+        .color-swatch-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .color-swatch {
+            border: 1px solid #DCDAD5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .swatch-color {
+            height: 100px;
+        }
+
+        .swatch-info {
+            padding: 15px;
+            background-color: #fff;
+        }
+
+        .swatch-info h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .swatch-info p {
+            font-size: 12px;
+            margin: 0;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .logotype-demo {
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #DCDAD5;
+            margin-bottom: 20px;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .clear-space-demo {
+            position: relative;
+            padding: 40px;
+            border: 1px dashed var(--color-stone);
+            background-color: rgba(150, 121, 105, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clear-space-demo .logotype-inner {
+            font-size: 36px;
+            font-weight: 600;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #DCDAD5;
+        }
+
+        .incorrect-usage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .incorrect-usage-item {
+            border: 1px solid #DCDAD5;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .incorrect-usage-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .incorrect-usage-item p {
+            font-size: 14px;
+            color: #C41E3A;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .incorrect-usage-item .logotype-incorrect {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .distort {
+            transform: scale(1.5, 0.5);
+        }
+
+        .recolor {
+            color: #FF00FF;
+        }
+
+        .shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .cluttered {
+            background-image: url('https://images.unsplash.com/photo-1580133318324-f2f71045ac2d?q=80&w=800');
+            background-size: cover;
+            color: var(--color-paper);
+        }
+
+        .typography-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .typography-table th,
+        .typography-table td {
+            border: 1px solid #DCDAD5;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .typography-table th {
+            background-color: #ECEAE6;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .typography-table td {
+            font-size: 14px;
+        }
+
+        .type-sample {
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        .grid-demo-container {
+            background-color: #fff;
+            border: 1px solid #DCDAD5;
+            padding: var(--grid-gutter);
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--grid-gutter);
+            background-image: linear-gradient(to right, rgba(204, 119, 34, 0.1) 1px, transparent 1px);
+            background-size: calc(100%/12) 100%;
+        }
+
+        .grid-item {
+            background-color: rgba(162, 213, 242, 0.5);
+            border: 1px solid var(--color-blue);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-secondary);
+            font-size: 12px;
+            color: var(--color-slate);
+        }
+
+        .col-span-12 {
+            grid-column: span 12;
+        }
+
+        .col-span-8 {
+            grid-column: span 8;
+        }
+
+        .col-span-6 {
+            grid-column: span 6;
+        }
+
+        .col-span-4 {
+            grid-column: span 4;
+        }
+
+        .col-span-3 {
+            grid-column: span 3;
+        }
+
+        .image-style-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .image-style-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 1px solid #DCDAD5;
+        }
+
+        .image-style-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #DCDAD5;
+        }
+
+        .icon-item svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 15px;
+        }
+
+        .icon-item p {
+            font-family: var(--font-secondary);
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .instagram-grid-container {
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 1 / 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 4px;
+            background-color: #fff;
+            border: 1px solid #DCDAD5;
+            padding: 4px;
+        }
+
+        .insta-post {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        .insta-post::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .insta-post-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .post-map {
+            background-image: url('https://images.unsplash.com/photo-1599599810703-76c27074a58a?q=80&w=600');
+        }
+
+        .post-landscape {
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600');
+        }
+
+        .post-quote {
+            background-color: var(--color-slate);
+        }
+
+        .post-texture {
+            background-image: url('https://images.unsplash.com/photo-1615839369214-436046fb3322?q=80&w=600');
+        }
+
+        .post-product {
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600');
+        }
+
+        .post-detail {
+            background-image: url('https://images.unsplash.com/photo-1551437188-a3e2e04e5783?q=80&w=600');
+        }
+
+        .poster-layout-container {
+            display: flex;
+            gap: 30px;
+            justify-content: space-around;
+        }
+
+        .poster-demo {
+            width: 250px;
+            height: 354px;
+            /* A-series aspect ratio */
+            border: 1px solid #DCDAD5;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .poster-image-top {
+            flex-grow: 1;
+            background-color: #ccc;
+            margin-bottom: 20px;
+            background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600');
+            background-size: cover;
+        }
+
+        .poster-text-bottom h5 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .poster-text-bottom p {
+            font-family: var(--font-secondary);
+            font-size: 9px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .poster-type-focus {
+            justify-content: flex-end;
+        }
+
+        .poster-type-focus h5 {
+            font-size: 36px;
+            line-height: 1.1;
+        }
+
+        .poster-type-focus p {
+            margin-top: 10px;
+        }
+
+        .map-demo-container {
+            width: 100%;
+            height: 500px;
+            background-color: var(--color-paper);
+            border: 1px solid #DCDAD5;
+            position: relative;
+            font-family: var(--font-secondary);
+            overflow: hidden;
+        }
+
+        .map-demo-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-title-block {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        .map-title-block h4 {
+            font-family: var(--font-primary);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--color-slate);
+        }
+
+        .map-title-block p {
+            font-family: var(--font-secondary);
+            font-size: 12px;
+            margin: 5px 0 0 0;
+            color: var(--color-slate);
+        }
+
+        .chart-demo-container {
+            background-color: #fff;
+            padding: 40px;
+            border: 1px solid #DCDAD5;
+        }
+
+        .bar-chart {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--color-slate);
+            padding-bottom: 10px;
+        }
+
+        .bar {
+            width: 50px;
+            background-color: var(--color-stone);
+            position: relative;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-secondary);
+            font-size: 12px;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-secondary);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .brand-nav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #DCDAD5;
+                padding: 20px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="brand-nav">
+        <div class="logo">Relieve</div>
+        <ul>
+            <li><a href="#philosophy">I. Philosophy</a></li>
+            <li><a href="#principles">II. Core Principles</a></li>
+            <li><a href="#logotype">III. The Logotype</a></li>
+            <li><a href="#typography">IV. Typography</a></li>
+            <li><a href="#color">V. Colour Palette</a></li>
+            <li><a href="#grid">VI. The Grid</a></li>
+            <li><a href="#imagery">VII. Imagery & Iconography</a></li>
+            <li class="nav-section-title">Application</li>
+            <li><a href="#digital">VIII. Digital Presence</a></li>
+            <li><a href="#cartographic">IX. Cartographic Design</a></li>
+            <li><a href="#physical">X. Physical Media</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <header>
+            <h1>Relieve</h1>
+            <p class="text-light" style="font-size: 20px; margin-top: -15px;">A Brand Style Guide</p>
+        </header>
+        <section id="philosophy">
+            <h2>I. The Relieve Philosophy: Precision, Nature, and Clarity</h2>
+            <h3 id="philosophy-mission">1.1 Our Mission: Mapping the Intersection</h3>
+            <p>The mission of Relieve is to create objects and communications that celebrate the intersection of natural topography and human-made precision. The brand does not merely represent nature; it interprets it through a lens of clarity, function, and minimalist beauty. This approach is rooted in the belief that design should serve as a tool for clear communication rather than purely as a vehicle for personal expression. In this context, Relieve undertakes a cultural mission: to influence taste by making exceptional, functional design genuinely accessible, focusing on the public and personal spaces where people and history meet. Our work---from map posters to digital interfaces---is a testament to the idea that the complex beauty of the natural world can be understood and appreciated through the deliberate application of order and structure.</p>
+            <h3 id="philosophy-name">1.2 The Name: Relief in Two Forms</h3>
+            <p>The brand name, Relieve, operates on a deliberate duality of meaning, forming the conceptual core of our identity. This duality is the source of the brand's creative tension and, ultimately, its harmony. Every design decision must serve both facets of this identity, balancing objective data with subjective experience.</p>
+            <ul>
+                <li><strong>Topographic Relief:</strong> This refers to the physical shape, texture, and quantitative representation of the land's surface. It is the world of data, cartography, elevation, and geology---objective, measurable, and scientific. It speaks to our commitment to accuracy and precision in everything we create, from the contours on a map to the structure of a web page.</li>
+                <li><strong>Emotional Relief:</strong> This refers to the feeling of calm, clarity, and escape found in both the vastness of nature and the quiet order of well-executed design. It is the human experience of hiking a trail, the serenity of a minimalist space, and the satisfaction of understanding complex information presented with elegance. This aspect of the name guides our aesthetic toward tranquility and respect for the user's cognitive load.</li>
+            </ul>
+            <h3 id="philosophy-voice">1.3 Our Voice: Objective, Calm, and Assured</h3>
+            <p>The Relieve brand voice is a reflection of its dual identity. Communication should be executed with the precision of a cartographer and the quiet confidence of a seasoned hiker. The language used is clear, concise, and devoid of hyperbole or unnecessary ornamentation. This commitment to objectivity is a direct extension of the Swiss Style philosophy, which prioritizes the clear sharing of information. The tone is always assured but never arrogant, calm but never passive. It embodies the Bauhaus principle of "less is more," where effectiveness is achieved through simplicity and directness.</p>
+        </section>
+        <hr>
+        <section id="principles">
+            <h2>II. Core Principles: A Foundation in Functionalism</h2>
+            <p>The visual language of Relieve is built upon a synthesis of influential 20th-century design movements, updated with a contemporary European sensibility. These principles are not arbitrary rules but a philosophical framework that ensures every creation is purposeful, clear, and timeless.</p>
+            <h3 id="principles-swiss">2.1 The Swiss International Style: The Grid as Our Guide</h3>
+            <p>The Swiss Style, or International Typographic Style, provides the structural backbone for the Relieve brand. Its emphasis on objectivity, legibility, and order aligns perfectly with our mission to present complex information with absolute clarity. We adopt its core tenets as our own:</p>
+            <ul>
+                <li><strong>The Grid System:</strong> The grid is the fundamental, invisible structure for all layouts. It is a mathematically derived framework that ensures proportional harmony and a clear visual hierarchy among all elements, from text to imagery. It is the primary tool for bringing order to information.</li>
+                <li><strong>Sans-Serif Typography:</strong> We exclusively use sans-serif typefaces for their inherent clarity, modernity, and objectivity. By removing decorative elements, the focus remains on the content itself, ensuring maximum readability.</li>
+                <li><strong>Asymmetrical Layouts:</strong> Compositions are arranged asymmetrically to create dynamic visual interest and to guide the viewer's eye in a natural, logical flow. This approach, often paired with left-aligned, ragged-right text, respects the natural reading direction of Western languages.</li>
+                <li><strong>Objective Imagery:</strong> Photography is treated as a functional element, a clear window onto the subject. Images are documentary in style, presenting landscapes and objects with neutrality and precision, allowing the subject to speak for itself.</li>
+            </ul>
+            <h3 id="principles-bauhaus">2.2 The Bauhaus School: The Purity of Form</h3>
+            <p>The Bauhaus movement informs the brand's philosophical approach to creation, emphasizing the unity of aesthetics and utility. It provides the "why" behind our minimalist forms and material choices.</p>
+            <ul>
+                <li><strong>Form Follows Function:</strong> This is our guiding creed. The aesthetic of any object or design must be dictated by its purpose. Every line, shape, and color serves a function; unnecessary ornamentation is eliminated to enhance clarity and usability.</li>
+                <li><strong>Geometric Essentialism:</strong> Our visual language is built from fundamental geometric shapes---circles, squares, triangles, and lines. This approach, central to Bauhaus teaching, ensures a cohesive and universally understandable system, from our iconography to our layout structures.</li>
+                <li><strong>Unity of Art & Technology:</strong> We embrace the Bauhaus ideal of bridging the gap between art, craft, and industry. The precision of a 3D printer and the artistry of a cartographer are seen as parts of a single, unified creative process, aimed at producing functional, accessible, and beautiful objects.</li>
+            </ul>
+            <h3 id="principles-minimalism">2.3 Contemporary European Minimalism: The Human Touch</h3>
+            <p>To prevent our functionalist approach from becoming sterile, we temper it with the sensibilities of contemporary European design. This involves a focus on materiality, light, and creating a sense of calm. Our minimalism is not cold; it is designed from a human perspective, aiming to create "poetic objects" and serene spaces. We draw inspiration from Spanish and Scandinavian design, which masterfully use natural light, earthy materials, and uncluttered layouts to create environments that are both minimalist and deeply inviting.</p>
+            <h3 id="principles-whitespace">2.4 The Active Role of Whitespace</h3>
+            <p>In the Relieve design system, whitespace (or negative space) is not an empty background; it is a critical, active design element. Its function is manifold: it enhances readability, creates focus on key elements, and establishes a visual hierarchy.</p>
+            <p>More significantly, we treat whitespace as a direct cartographic and thematic element. It is the visual equivalent of the vast, open landscapes that inspire the brand. Just as a cartographer uses the unmapped ocean or the empty sky to give scale and context to landmasses, we use whitespace to give our content room to breathe. It evokes the feeling of open space, of majesty, and of the emotional relief that comes from an uncluttered vista. This philosophy dictates that our layouts---from website pages to poster designs---should feel expansive and balanced, using generous margins and spacing to guide the eye and calm the mind.</p>
+        </section>
+        <hr>
+        <section id="logotype">
+            <h2>III. The Logotype: Our Signature</h2>
+            <p>The logotype is the most consistent and recognizable element of the Relieve brand. It is a precisely crafted wordmark that embodies our principles of clarity, simplicity, and geometric purity. Its use must be consistent across all applications to maintain brand integrity.</p>
+            <h3 id="logotype-primary">3.1 Primary Logotype</h3>
+            <p>The primary logotype is the word "Relieve" set in our primary typeface, Geist Sans, in a bold weight. The kerning (space between letters) has been meticulously adjusted to create a balanced and harmonious visual unit. It should not be manually recreated by typing the name; always use the approved digital asset.</p>
+            <div class="logotype-demo">Relieve</div>
+            <h3 id="logotype-clearspace">3.2 Clear Space</h3>
+            <p>To ensure its legibility and impact, the logotype must always be surrounded by a minimum area of clear space. This exclusion zone prevents other graphic elements or text from interfering with the logotype. The minimum clear space is defined by the height of the capital letter 'R' in the logotype, applied to all four sides.</p>
+            <div class="clear-space-demo">
+                <div class="logotype-inner">Relieve</div>
+            </div>
+            <h3 id="logotype-min-size">3.3 Minimum Size</h3>
+            <p>To maintain legibility, the logotype must not be reproduced at sizes smaller than the specified minimums. These sizes ensure the name remains clear and readable in both digital and print environments.</p>
+            <ul>
+                <li><strong>Digital:</strong> 120 pixels wide</li>
+                <li><strong>Print:</strong> 30 mm wide</li>
+            </ul>
+            <h3 id="logotype-incorrect">3.4 Incorrect Usage</h3>
+            <p>The integrity of the logotype must be protected. It should never be altered or manipulated in any way. The following examples illustrate common misuses that must be avoided.</p>
+            <div class="incorrect-usage-grid">
+                <div class="incorrect-usage-item">
+                    <div class="logotype-incorrect distort">Relieve</div>
+                    <p>Do not distort or stretch the logotype.</p>
+                </div>
+                <div class="incorrect-usage-item">
+                    <div class="logotype-incorrect recolor">Relieve</div>
+                    <p>Do not recolor outside the approved palette.</p>
+                </div>
+                <div class="incorrect-usage-item">
+                    <div class="logotype-incorrect shadow">Relieve</div>
+                    <p>Do not add drop shadows or other effects.</p>
+                </div>
+                <div class="incorrect-usage-item cluttered">
+                    <div class="logotype-incorrect">Relieve</div>
+                    <p>Do not place on a cluttered or illegible background.</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="typography">
+            <h2>IV. Typography: The Voice of Relieve</h2>
+            <p>Typography is the primary vehicle for our brand voice. The system is built on a foundation of objectivity and clarity, adhering to the principles of the International Typographic Style. Our approach is not merely aesthetic; it is a functional system where the choice of typeface itself communicates the nature of the information being presented.</p>
+            <h3 id="typography-system">4.1 Our Typefaces: A Dual System</h3>
+            <p>The Relieve brand employs a dual-typeface system to tell its complete story. This pairing is a narrative device, reflecting the brand's core tension between the human experience of nature and the technical science of geography. Each typeface has a distinct role, and their interplay creates a rich, functional, and hierarchical typographic language.</p>
+            <ul>
+                <li><strong>The Humanist Voice:</strong> A clear, modern geometric sans-serif is used for headlines, body copy, and primary brand communication. It is approachable, legible, and embodies our principles of minimalist design.</li>
+                <li><strong>The Technical Voice:</strong> A characterful monospace font is used for technical data, captions, coordinates, and annotations. Its fixed-width nature evokes precision, data, and the craft of cartography.</li>
+            </ul>
+            <h3 id="typography-primary">4.2 Primary Typeface: Geist Sans</h3>
+            <p><strong>Geist Sans</strong> is the primary typeface for the Relieve brand. It is a modern geometric sans-serif designed with "precision, clarity, and functionality at its core" and draws direct inspiration from the Swiss design movement. Its clean forms, excellent legibility at all sizes, and neutral-yet-confident tone make it the perfect vehicle for our main brand voice. It is used for all headlines, sub-headlines, and primary body text.</p>
+            <h3 id="typography-secondary">4.3 Secondary & Technical Typeface: Space Mono</h3>
+            <p><strong>Space Mono</strong> is the secondary and technical typeface. As a monospace font, each character occupies an equal amount of horizontal space, lending it a rhythmic, mechanical quality ideal for displaying data. Space Mono was chosen for its geometric foundation, which pairs harmoniously with Geist Sans, and for its unique character details that prevent it from feeling sterile. It is used for captions, map labels, data tables, code snippets, and any instance where a technical or editorial feel is desired.</p>
+            <h3 id="typography-scale">4.4 Typographic Scale & Hierarchy</h3>
+            <p>A consistent, ratio-based typographic scale ensures visual harmony and clear hierarchy across all media. This system is fundamental to the Swiss Style's structured approach. All sizes are defined for web and print, with specific rules for font, weight, line height, and letter spacing.</p>
+            <div class="table-container">
+                <table class="typography-table">
+                    <thead>
+                        <tr>
+                            <th>Style</th>
+                            <th>Example</th>
+                            <th>Font Family</th>
+                            <th>Weight</th>
+                            <th>Size (Web/Print)</th>
+                            <th>Line Height</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>H1 / Heading 1</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-primary); font-weight: 700; font-size: 48px;">The Summit</td>
+                            <td>Geist Sans</td>
+                            <td>700 (Bold)</td>
+                            <td>3rem / 48pt</td>
+                            <td>1.2</td>
+                            <td>Primary page titles. Use sparingly.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H2 / Heading 2</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-primary); font-weight: 600; font-size: 36px;">Alpine Meadows</td>
+                            <td>Geist Sans</td>
+                            <td>600 (Semibold)</td>
+                            <td>2.25rem / 36pt</td>
+                            <td>1.25</td>
+                            <td>Major section headings.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H3 / Heading 3</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-primary); font-weight: 600; font-size: 24px;">Contour Lines</td>
+                            <td>Geist Sans</td>
+                            <td>600 (Semibold)</td>
+                            <td>1.5rem / 24pt</td>
+                            <td>1.3</td>
+                            <td>Sub-section headings.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body Text</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-primary); font-weight: 400; font-size: 16px; line-height: 1.6;">A topographic map shows detail and relief features.</td>
+                            <td>Geist Sans</td>
+                            <td>400 (Regular)</td>
+                            <td>1rem / 16pt</td>
+                            <td>1.6</td>
+                            <td>Main paragraph text for articles and descriptions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Caption / Meta</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-secondary); font-weight: 400; font-size: 13px; line-height: 1.5;">45.5236° N, 122.6750° W</td>
+                            <td>Space Mono</td>
+                            <td>400 (Regular)</td>
+                            <td>0.8125rem / 13pt</td>
+                            <td>1.5</td>
+                            <td>Image captions, map labels, data points, footnotes.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Button / CTA</strong></td>
+                            <td class="type-sample" style="font-family: var(--font-primary); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Explore Map</td>
+                            <td>Geist Sans</td>
+                            <td>700 (Bold)</td>
+                            <td>0.875rem / 14pt</td>
+                            <td>1</td>
+                            <td>Buttons and primary calls-to-action.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 id="typography-application">4.5 Application Rules</h3>
+            <p>To ensure optimal readability and adherence to our design principles, the following typesetting rules must be applied:</p>
+            <ul>
+                <li><strong>Alignment:</strong> All text should be left-aligned with a ragged-right margin. This is a core tenet of the International Typographic Style, enhancing readability by providing a consistent starting point for each line and avoiding the uneven spacing caused by justification. Centered text should be used only in rare, specific cases for emphasis (e.g., a single-line poster title).</li>
+                <li><strong>Line Length:</strong> For body copy, line length should be maintained between 50 and 75 characters (including spaces) for optimal reading rhythm. On the web, this translates to a maximum width of approximately 720 pixels.</li>
+                <li><strong>Paragraph Spacing:</strong> Use space between paragraphs instead of first-line indents. A single line break (equal to the body text's font size) is sufficient to separate paragraphs clearly.</li>
+                <li><strong>Hyphenation:</strong> Automated hyphenation should be enabled to ensure the ragged-right edge remains balanced and does not create distracting shapes in the negative space.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="color">
+            <h2>V. Colour Palette: Hues of the Earth & Data</h2>
+            <p>The Relieve color system is an exercise in systematic naturalism. The palettes are derived from the hues of the natural world---rock, water, forest, and sky---but they are organized and applied with the rigor of a scientific system. This approach allows color to serve a dual purpose: to evoke the emotion of a landscape and to encode complex information with clarity and precision.</p>
+            <p>The entire color system is structured like a cartographic legend. The Primary Palette forms the "base map"---the fundamental tones of the earth. The Secondary & Accent Palette provides the "points of interest"---colors used for highlighting and guidance. Finally, the specialized Cartographic & Data Palettes act as "thematic overlays," designed for the functional purpose of visualizing quantitative and qualitative information.</p>
+            <h3 id="color-primary">5.1 Primary Palette: The Foundation</h3>
+            <p>This core group of three neutral colors forms the foundation of the brand's visual identity. They are inspired by natural, raw materials and are designed to create a calm, sophisticated, and timeless backdrop for all content. These colors should dominate most compositions, adhering to a minimalist aesthetic.</p>
+            <div class="color-swatch-container">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #F8F6F2;"></div>
+                    <div class="swatch-info">
+                        <h5>Paper</h5>
+                        <p>HEX: #F8F6F2<br>RGB: 248, 246, 242<br>CMYK: 3, 3, 5, 0</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #343A40;"></div>
+                    <div class="swatch-info">
+                        <h5>Dark Slate</h5>
+                        <p>HEX: #343A40<br>RGB: 52, 58, 64<br>CMYK: 75, 63, 55, 75</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #967969;"></div>
+                    <div class="swatch-info">
+                        <h5>Warm Stone</h5>
+                        <p>HEX: #967969<br>RGB: 150, 121, 105<br>CMYK: 39, 52, 58, 18</p>
+                    </div>
+                </div>
+            </div>
+            <h3 id="color-secondary">5.2 Secondary & Accent Palette: Points of Interest</h3>
+            <p>This limited palette of accent colors is used sparingly to draw attention, create contrast, and highlight important information such as links, calls-to-action, or key data points. Their inspiration is drawn from distinct natural phenomena, providing a vibrant counterpoint to the neutral foundation.</p>
+            <div class="color-swatch-container">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #A2D5F2;"></div>
+                    <div class="swatch-info">
+                        <h5>Alpine Blue</h5>
+                        <p>HEX: #A2D5F2<br>RGB: 162, 213, 242<br>CMYK: 34, 6, 0, 0</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #0B6623;"></div>
+                    <div class="swatch-info">
+                        <h5>Conifer Green</h5>
+                        <p>HEX: #0B6623<br>RGB: 11, 102, 35<br>CMYK: 89, 39, 100, 47</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #CC7722;"></div>
+                    <div class="swatch-info">
+                        <h5>Ochre</h5>
+                        <p>HEX: #CC7722<br>RGB: 204, 119, 34<br>CMYK: 18, 61, 99, 4</p>
+                    </div>
+                </div>
+            </div>
+            <h3 id="color-data">5.3 Cartographic & Data Visualization Palettes</h3>
+            <p>For maps and data visualizations, color must be functional above all else. These palettes are designed according to cartographic best practices to ensure data is represented accurately and is accessible to all viewers, including those with color vision deficiencies. They are based on the schemes developed by cartographic experts like Cynthia Brewer.</p>
+            <h4>Sequential: Elevation & Density</h4>
+            <p>Used for mapping ordered data that progresses from low to high, such as elevation, population density, or rainfall. This palette uses a single hue that progresses from light to dark.</p>
+            <div class="color-swatch-container">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #f7fcfd;"></div>
+                    <div class="swatch-info">
+                        <p>#f7fcfd</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #e0ecf4;"></div>
+                    <div class="swatch-info">
+                        <p>#e0ecf4</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #bfd3e6;"></div>
+                    <div class="swatch-info">
+                        <p>#bfd3e6</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #9ebcda;"></div>
+                    <div class="swatch-info">
+                        <p>#9ebcda</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #8c96c6;"></div>
+                    <div class="swatch-info">
+                        <p>#8c96c6</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #8856a7;"></div>
+                    <div class="swatch-info">
+                        <p>#8856a7</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #810f7c;"></div>
+                    <div class="swatch-info">
+                        <p>#810f7c</p>
+                    </div>
+                </div>
+            </div>
+            <h4>Diverging: Change & Deviation</h4>
+            <p>Used to highlight values that diverge from a central midpoint, such as temperature change, population growth/decline, or deviation from an average. Two distinct hues diverge from a neutral central color.</p>
+            <div class="color-swatch-container">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #8c510a;"></div>
+                    <div class="swatch-info">
+                        <p>#8c510a</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #bf812d;"></div>
+                    <div class="swatch-info">
+                        <p>#bf812d</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #dfc27d;"></div>
+                    <div class="swatch-info">
+                        <p>#dfc27d</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #f6e8c3;"></div>
+                    <div class="swatch-info">
+                        <p>#f6e8c3</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #c7eae5;"></div>
+                    <div class="swatch-info">
+                        <p>#c7eae5</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #80cdc1;"></div>
+                    <div class="swatch-info">
+                        <p>#80cdc1</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #01665e;"></div>
+                    <div class="swatch-info">
+                        <p>#01665e</p>
+                    </div>
+                </div>
+            </div>
+            <h4>Qualitative: Land Use & Categories</h4>
+            <p>Used for nominal or categorical data where there is no inherent order, such as land use types, political affiliations, or geological zones. This palette uses distinct hues of similar lightness to differentiate categories without implying a ranking.</p>
+            <div class="color-swatch-container">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #a6cee3;"></div>
+                    <div class="swatch-info">
+                        <p>#a6cee3</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #1f78b4;"></div>
+                    <div class="swatch-info">
+                        <p>#1f78b4</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #b2df8a;"></div>
+                    <div class="swatch-info">
+                        <p>#b2df8a</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #33a02c;"></div>
+                    <div class="swatch-info">
+                        <p>#33a02c</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #fb9a99;"></div>
+                    <div class="swatch-info">
+                        <p>#fb9a99</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #e31a1c;"></div>
+                    <div class="swatch-info">
+                        <p>#e31a1c</p>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: #fdbf6f;"></div>
+                    <div class="swatch-info">
+                        <p>#fdbf6f</p>
+                    </div>
+                </div>
+            </div>
+            <h3 id="color-ratios">5.4 Colour Ratios & Application</h3>
+            <p>To maintain the minimalist and balanced aesthetic, color should be applied according to a simple ratio. This prevents the overuse of accent colors and ensures that compositions remain clean and focused. The recommended ratio is an adaptation of the classic 60-30-10 rule:</p>
+            <ul>
+                <li><strong>60% Primary Neutral (Paper):</strong> The dominant color, used for backgrounds and creating ample whitespace.</li>
+                <li><strong>30% Secondary Neutral (Dark Slate / Warm Stone):</strong> Used for text, structural elements, and secondary backgrounds.</li>
+                <li><strong>10% Accent Colour (Alpine Blue, etc.):</strong> Used for calls-to-action, highlights, and key data points.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="grid">
+            <h2>VI. The Grid: Structuring Information</h2>
+            <p>The grid system is the single most important tool for achieving the clarity, order, and harmony that defines the Relieve brand. It is the invisible scaffolding upon which all our designs are built, a direct application of the Swiss Style's most fundamental principle. The grid is not a constraint on creativity; it is a framework that enables it, ensuring that every element is placed with intention and purpose.</p>
+            <h3 id="grid-master">6.1 The Master Grid</h3>
+            <p>The Relieve master grid is a <strong>12-column grid</strong>. This structure was chosen for its supreme flexibility. A 12-column grid can be easily divided into halves (6 columns), thirds (4 columns), quarters (3 columns), or sixths (2 columns), allowing for a wide variety of balanced and asymmetrical layouts while maintaining a consistent underlying structure. The space between columns, known as the gutter, is essential for separating content and creating visual rhythm.</p>
+            <h3 id="grid-web">6.2 Grid Application: Web & Digital</h3>
+            <p>For websites and digital interfaces, the 12-column grid provides a robust foundation for responsive design. The example below demonstrates how content blocks can align to the grid, creating a clean, organized, and easy-to-navigate user experience.</p>
+            <div class="grid-demo-container">
+                <div class="grid-demo">
+                    <div class="grid-item col-span-12">Header / Navigation</div>
+                    <div class="grid-item col-span-8" style="height: 250px;">Main Content / Image</div>
+                    <div class="grid-item col-span-4" style="height: 250px;">Sidebar / Info</div>
+                    <div class="grid-item col-span-4">Feature 1</div>
+                    <div class="grid-item col-span-4">Feature 2</div>
+                    <div class="grid-item col-span-4">Feature 3</div>
+                    <div class="grid-item col-span-6">Text Block</div>
+                    <div class="grid-item col-span-6">Text Block</div>
+                </div>
+            </div>
+            <h3 id="grid-social">6.3 Grid Application: Social Media & Posters</h3>
+            <p>While the 12-column grid is the master, its principles can be adapted to different formats. For square (e.g., Instagram posts) or vertical (e.g., posters) layouts, a simpler grid is often more effective. A 4 or 6-column/row grid provides sufficient structure for these formats, ensuring that compositions remain balanced and aligned with the brand's core principles of order and clarity.</p>
+        </section>
+        <hr>
+        <section id="imagery">
+            <h2>VII. Imagery & Iconography: A Visual Language</h2>
+            <p>The visual language of Relieve extends beyond typography and color to include photography and iconography. These elements must adhere to the same principles of objectivity, clarity, and minimalist beauty.</p>
+            <h3 id="imagery-photo">7.1 Photography Style: The Objective Observer</h3>
+            <p>Photography for the Relieve brand is functional, serving to document and display our subjects with honesty and clarity. It avoids overt stylization in favor of a neutral, documentary perspective, as championed by the Swiss Style. The beauty is found in the subject itself, not in heavy-handed post-processing.</p>
+            <div class="image-style-grid">
+                <div class="image-style-item">
+                    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1000&auto=format&fit=crop" alt="Expansive mountain landscape with a focus on texture and scale.">
+                    <p><strong>Subject:</strong> Expansive landscapes, topographic textures (rock, snow, flora), the process of making (3D printers, cartography tools), and solitary human figures viewed from a distance to emphasize scale.</p>
+                </div>
+                <div class="image-style-item">
+                    <img src="https://images.unsplash.com/photo-1542224562-e2a269f28563?q=80&w=1000&auto=format&fit=crop" alt="Asymmetrical composition of a foggy mountain range.">
+                    <p><strong>Composition:</strong> Asymmetrical, adhering to the rule of thirds. A strong emphasis on negative space (sky, fog, water) is crucial to evoke a sense of openness and align with our principle of active whitespace.</p>
+                </div>
+                <div class="image-style-item">
+                    <img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?q=80&w=1000&auto=format&fit=crop" alt="Lone hiker in a vast, muted landscape.">
+                    <p><strong>Tone:</strong> Documentary, objective, and neutral. Avoid overly dramatic, high-contrast, or saturated styles. The lighting should feel natural and authentic to the environment.</p>
+                </div>
+                <div class="image-style-item">
+                    <img src="https://images.unsplash.com/photo-1615839369214-436046fb3322?q=80&w=1000&auto=format&fit=crop" alt="Close-up texture of rock strata in natural, earthy tones.">
+                    <p><strong>Colour:</strong> All photography must harmonize with the brand's established color palette. Images should feature muted, natural tones that complement our Paper, Slate, and Stone neutrals, with occasional accents of Alpine Blue or Conifer Green.</p>
+                </div>
+            </div>
+            <h3 id="imagery-icons">7.2 Iconography System: Geometric Purity</h3>
+            <p>Our iconography is a direct expression of Bauhaus principles: functional, minimalist, and constructed from basic geometric shapes. Each icon is built on a 16x16 pixel grid to ensure consistency and scalability. The style is simple, clean, and instantly recognizable, serving as a universal language for navigation and information.</p>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 20l6-10 4 4 6-8 5 12H3z" />
+                    </svg>
+                    <p>Mountain</p>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <p>Location</p>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L12 22M12 2L6 8M12 2L18 8" />
+                    </svg>
+                    <p>North</p>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22V16M12 10V2M16 6L12 2L8 6M16 18L12 22L8 18" />
+                    </svg>
+                    <p>Elevation</p>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.5 17.5L22 22" />
+                        <path d="M20 11a9 9 0 10-14.9 6.32" />
+                    </svg>
+                    <p>Search</p>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h18M3 12h18M3 18h18" />
+                    </svg>
+                    <p>Menu</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="digital">
+            <h2>VIII. Application: Digital Presence</h2>
+            <p>The brand's digital touchpoints are the primary way most audiences will interact with Relieve. Consistency in applying our core principles---grid, typography, color, and imagery---is paramount to creating a cohesive and intuitive user experience.</p>
+            <h3 id="digital-website">8.1 Website Layouts</h3>
+            <p>All website layouts are built upon the 12-column master grid. The design prioritizes clarity, legibility, and generous use of whitespace to guide the user's focus. Asymmetrical layouts create a dynamic flow, while the strict typographic hierarchy ensures information is easy to parse.</p>
+            <h4>Homepage Wireframe Example</h4>
+            <div class="grid-demo-container">
+                <div class="grid-demo">
+                    <div class="grid-item col-span-12" style="height: 300px;">Hero Image + H1 Title</div>
+                    <div class="grid-item col-span-12" style="height: 60px; background-color: #fff; border: none; align-items: flex-start;">
+                        <h3 style="margin:0;">Featured Collections</h3>
+                    </div>
+                    <div class="grid-item col-span-4" style="height: 200px;">Product 1</div>
+                    <div class="grid-item col-span-4" style="height: 200px;">Product 2</div>
+                    <div class="grid-item col-span-4" style="height: 200px;">Product 3</div>
+                    <div class="grid-item col-span-7" style="height: 250px;">Brand Philosophy Text</div>
+                    <div class="grid-item col-span-5" style="height: 250px;">Supporting Image</div>
+                </div>
+            </div>
+            <h3 id="digital-social">8.2 Social Media: The Instagram Grid</h3>
+            <p>Instagram is a key platform for visual storytelling. The feed must be a curated expression of the Relieve aesthetic: clean, calm, and cohesive. A balanced mix of content types creates a rhythmic and engaging grid. We use a combination of expansive landscapes, detailed product shots, and clean typographic posts.</p>
+            <div class="instagram-grid-container">
+                <div class="insta-post post-landscape"></div>
+                <div class="insta-post post-quote">
+                    <div class="insta-post-content">
+                        <h4>Form Follows Function.</h4>
+                    </div>
+                </div>
+                <div class="insta-post post-map"></div>
+                <div class="insta-post post-quote">
+                    <div class="insta-post-content">
+                        <p class="text-monospace">44.4605° N<br>110.8281° W</p>
+                    </div>
+                </div>
+                <div class="insta-post post-detail"></div>
+                <div class="insta-post post-landscape"></div>
+                <div class="insta-post post-product"></div>
+                <div class="insta-post post-texture"></div>
+                <div class="insta-post post-quote">
+                    <div class="insta-post-content">
+                        <h4>The Grid as Our Guide.</h4>
+                    </div>
+                </div>
+            </div>
+            <h4>Content Guidelines</h4>
+            <ul>
+                <li><strong>Post Templates:</strong> Utilize a few core templates to maintain consistency. For example, a map feature post might have the map as the primary visual with location data in Space Mono overlaid. A quote post will use our primary brand colors and Geist Sans typography.</li>
+                <li><strong>Story Guidelines:</strong> Instagram Stories should use the brand's typefaces and color palette consistently. Use the full screen for imagery and place text cleanly, respecting clear space.</li>
+                <li><strong>Feed Curation:</strong> Balance is key. Alternate between wide shots, detail shots, and typographic posts to create visual rhythm. Avoid posting too many similar images in a row. The overall feel should be one of curated calm.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="cartographic">
+            <h2>IX. Application: Cartographic & Data Design</h2>
+            <p>The design of our core products---map posters and data visualizations---is where the Relieve philosophy is most tangibly expressed. Here, we synthesize functional, data-driven cartography with a minimalist artistic aesthetic. The goal is to strip away all non-essential "chartjunk" to allow the data itself, and the natural patterns within it, to become the primary visual element.</p>
+            <h3 id="cartographic-maps">9.1 Map Poster Design Rules</h3>
+            <p>A Relieve map poster is both a precise piece of geographic information and a minimalist work of art. The design prioritizes the topography itself, using a restrained visual system to present the data with elegance and clarity. This approach treats the map as a piece of data art, where the "data-ink ratio" is maximized by focusing on the essential contour lines.</p>
+            <div class="map-demo-container">
+                <svg>
+                    <defs>
+                        <filter id="roughpaper" x="0%" y="0%" width="100%" height="100%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+                            <feDiffuseLighting in="turbulence" lighting-color="#F8F6F2" surfaceScale="2">
+                                <feDistantLight azimuth="45" elevation="60" />
+                            </feDiffuseLighting>
+                        </filter>
+                    </defs>
+                    <rect width="100%" height="100%" fill="#F8F6F2" />
+                    <path d="M-50 100 C 150 50, 250 200, 450 150 S 650 50, 850 100 T 1250 150" stroke="#967969" stroke-width="0.5" fill="none" />
+                    <path d="M-50 150 C 150 100, 250 250, 450 200 S 650 100, 850 150 T 1250 200" stroke="#967969" stroke-width="1.5" fill="none" />
+                    <path d="M-50 200 C 150 150, 250 300, 450 250 S 650 150, 850 200 T 1250 250" stroke="#967969" stroke-width="0.5" fill="none" />
+                    <path d="M-50 250 C 150 200, 250 350, 450 300 S 650 200, 850 250 T 1250 300" stroke="#967969" stroke-width="1.5" fill="none" />
+                    <path d="M 500 400 C 550 350, 650 350, 700 400 S 650 500, 600 450 S 500 400, 500 400 Z" fill="#A2D5F2" stroke="#A2D5F2" stroke-width="1" />
+                    <text x="720" y="420" font-family="Space Mono" font-size="10" fill="#343A40">Alpine Lake</text>
+                </svg>
+                <div class="map-title-block">
+                    <h4>Mount Rainier</h4>
+                    <p>46.8523° N, 121.7603° W</p>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Contour Lines:</strong> Use the Warm Stone or Dark Slate color for high contrast against the Paper background. Line weights must be differentiated: a thicker weight (e.g., 1.5pt) for index contours and a thinner weight (e.g., 0.5pt) for intermediate contours, consistent with topographic standards.</li>
+                <li><strong>Hydrography (Water):</strong> All water features (lakes, rivers, oceans) are rendered in Alpine Blue.</li>
+                <li><strong>Typography:</strong> All labels (place names, elevation markers, coordinates) must use Space Mono for its technical clarity. A strict typographic hierarchy must be followed for scale and importance.</li>
+                <li><strong>Symbols:</strong> Use the approved geometric icon set for points of interest (e.g., a triangle for a summit, a location pin for a trailhead).</li>
+                <li><strong>Layout:</strong> The composition must feature generous margins, treating the whitespace as a framing device. The title, coordinates, and any legend information are placed cleanly at the bottom of the poster, aligned to the underlying grid.</li>
+            </ul>
+            <h3 id="cartographic-charts">9.2 Charts & Data Visualization Rules</h3>
+            <p>All charts and graphs created for the brand must adhere to the principles of minimalist data visualization. The guiding philosophy, articulated by experts like Edward Tufte, is to maximize the "data-ink ratio"---that is, to dedicate the majority of the visual elements to displaying the data itself, and to remove everything else.</p>
+            <div class="chart-demo-container">
+                <h4>Monthly Hiker Traffic</h4>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 40%; background-color: #bfd3e6;">
+                        <div class="bar-value">4k</div>
+                        <div class="bar-label">Jan</div>
+                    </div>
+                    <div class="bar" style="height: 35%; background-color: #bfd3e6;">
+                        <div class="bar-value">3.5k</div>
+                        <div class="bar-label">Feb</div>
+                    </div>
+                    <div class="bar" style="height: 60%; background-color: #9ebcda;">
+                        <div class="bar-value">6k</div>
+                        <div class="bar-label">Mar</div>
+                    </div>
+                    <div class="bar" style="height: 75%; background-color: #8c96c6;">
+                        <div class="bar-value">7.5k</div>
+                        <div class="bar-label">Apr</div>
+                    </div>
+                    <div class="bar" style="height: 90%; background-color: #8856a7;">
+                        <div class="bar-value">9k</div>
+                        <div class="bar-label">May</div>
+                    </div>
+                    <div class="bar" style="height: 95%; background-color: #810f7c;">
+                        <div class="bar-value">9.5k</div>
+                        <div class="bar-label">Jun</div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Eliminate Chartjunk:</strong> Remove all unnecessary elements, including background colors, heavy gridlines, 3D effects, and drop shadows. A simple axis line is often sufficient.</li>
+                <li><strong>Strategic Use of Colour:</strong> Use color purposefully, not decoratively. Employ the approved Data Visualization Palettes to encode information. Use a neutral color for the base data and an accent color to highlight a key finding.</li>
+                <li><strong>Direct Labeling:</strong> Whenever possible, label data points directly on the chart instead of relying on a separate legend. This reduces the cognitive load on the viewer.</li>
+                <li><strong>Embrace Whitespace:</strong> Use whitespace to separate elements and create a clear visual hierarchy, making the chart easier to read and interpret.</li>
+                <li><strong>Choose the Right Chart:</strong> Select the simplest chart type that can accurately tell the story. Bar charts, line charts, and sparklines are preferred for their clarity. Avoid complex or ambiguous chart types like 3D pie charts.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="physical">
+            <h2>X. Application: Print & Physical Media</h2>
+            <p>The Relieve brand extends into the tangible world through printed posters and 3D-printed objects. The same principles of minimalism, functionalism, and material honesty must guide these creations.</p>
+            <h3 id="physical-posters">10.1 Poster Layouts</h3>
+            <p>Beyond map posters, promotional or event posters are exercises in pure Swiss and Bauhaus typographic composition. These designs rely on the dramatic interplay between bold, asymmetrically placed typography, a single powerful image, and generous, active whitespace. The layout is always structured on a grid, inspired by the iconic works of masters like Josef Müller-Brockmann and Armin Hofmann.</p>
+            <div class="poster-layout-container">
+                <div class="poster-demo">
+                    <div class="poster-image-top"></div>
+                    <div class="poster-text-bottom">
+                        <h5>Relieve: The Alps</h5>
+                        <p>A new collection of cartographic prints. Available now.</p>
+                    </div>
+                </div>
+                <div class="poster-demo poster-type-focus">
+                    <div class="poster-text-bottom">
+                        <h5>CLARITY</h5>
+                        <p>Relieve Design Philosophy. Form Follows Function. The Grid as Guide.</p>
+                    </div>
+                </div>
+            </div>
+            <h3 id="physical-3d">10.2 3D Printing Considerations</h3>
+            <p>Our 3D-printed topographic models are the ultimate physical manifestation of the brand's ethos. They are the most direct expression of "form follows function," where the form of the object is the data. The design is nothing more than the honest, unadorned representation of geographic information in three dimensions.</p>
+            <ul>
+                <li><strong>Materiality:</strong> Recommended materials should align with our natural and minimalist palette. Matte filaments in shades of white, grey, and black are preferred. Wood or stone-composite filaments can also be used to enhance the tactile, earthy quality of the objects.</li>
+                <li><strong>Form:</strong> The focus must remain on the accuracy and detail of the topographic data. The 3D model is not a sculpture of a mountain; it is the mountain, in miniature. No additional decorative elements should be added. This practice directly connects to the Bauhaus principle of uniting art and technology to create functional, mass-producible objects. The 3D printer is our modern workshop.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
